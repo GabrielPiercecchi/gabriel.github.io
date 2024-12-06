@@ -1,123 +1,271 @@
 <!DOCTYPE html>
-<html lang="it">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Sito personale di Gabriel Piercecchi" />
-        <meta name="author" content="Gabriel Piercecchi" />
-        <title>Gabriel Piercecchi's Personal Site</title>
+<html>
 
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Simple line icons-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- jquery e Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
-        <nav id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#page-top">Gabriel Piercecchi</a></li>
-                <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="#about">About</a></li>
-                <li class="sidebar-nav-item"><a href="#portfolio">Projects</a></li>
-                <li class="sidebar-nav-item"><a href="#contact">Contact</a></li>
-                <li class="sidebar-nav-item"><a href="https://github.com/GabrielPiercecchi/gabriel.github.io/tree/main/utilities">Utilities</a></li>
-            </ul>
-        </nav>
+<head>
+    <title>Gabriel Piercecchi's Personal Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="ageCalc.js"></script>
+    <script src="form.js"></script>
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
 
-        <!-- Header-->
-        <header class="masthead d-flex align-items-center">
-            <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">Gabriel Piercecchi</h1>
-                <h3 class="mb-5"><em><span class="age">21</span> y.o. / Web & App Developer / Penetration Tester </em></h3>
-                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
-            </div>
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        /* Set the width of the sidebar to 120px */
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+        #main {
+            margin-left: 120px
+        }
+
+        /* Remove margins from "page content" on small screens */
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+        }
+    </style>
+</head>
+
+<body class="w3-black">
+
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Avatar image in top left corner -->
+        <img src="./avatar.jpg" style="width:100%">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>ABOUT</p>
+        </a>
+        <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-eye w3-xxlarge"></i>
+            <p>PROJECTS</p>
+        </a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>CONTACT</p>
+        </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+            <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Gabriel Piercecchi.</h1>
+            <p>Web & App Developer / Penetration Tester</p>
+            <img src="./avatar.jpg" alt="boy" class="w3-image" width="592" height="608">
         </header>
 
-        <!-- About-->
-        <section class="content-section bg-light" id="about">
-            <div class="container px-4 px-lg-5 text-center">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-10">
-                        <h2>About</h2>
-                        <img src="assets/img/avatar.jpg" class="img-thumbnail">
-                        <p class="lead mb-5">
-                            My name is Gabriel Piercecchi, I am <span class="age">21</span> years old and I am currently a student attending the Master's program in Computer and Automation Engineering at the Marche Polytechnic University (<a href="https://www.univpm.it/Entra//">UNIVPM</a>).<br>
-                            I graduated in 2023 in Computer and Automation Engineering at UNIVPM and graduated , in 2020, from the scientific high school <a href="https://www.liceogalileiancona.edu.it/">Galileo Galilei</a>, applied sciences option, in Ancona.<br><br>
-                            I have been passionate about computers and, in general, computer science and programming for as long as I can remember; especially I started writing my first projects in C, C++ since 2016, HTML/CSS/JS since 2018, and I have been using Linux since 2020.
-                        </p>
-                    </div>
-                </div>
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2 class="w3-text-light-grey">My Name</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p>My name is Gabriel Piercecchi, I am <span class="age">21</span> years old and I am currently a student
+                attending the Master's program in Computer and Automation Engineering at the Marche Polytechnic
+                University (<a href="https://www.univpm.it/Entra//">UNIVPM</a>).<br>
+                <br>I graduated in 2023 in Computer and Automation Engineering at UNIVPM and graduated, in 2020, from
+                the scientific high school <a href="https://www.liceogalileiancona.edu.it/">Galileo Galilei</a>, applied
+                sciences option, in Ancona.<br><br>
+                <br>I have been passionate about computers and, in general, computer science and programming for as long
+                as I can remember; especially I started writing my first projects in C, C++ since 2016, HTML/CSS/JS
+                since 2018, and I have been using Linux since 2020.
+            </p>
+            <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+            <p class="w3-wide">Penetration Test</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:85%"></div>
             </div>
-        </section>
-        
-        <!-- Portfolio - progetti personali -->
-        <section class="content-section" id="portfolio">
-            <div class="container px-4 px-lg-5">
-                <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">Portfolio</h3>
-                    <h2 class="mb-5"><a href="https://github.com/GabrielPiercecchi?tab=repositories" style="color: black;">Personal Projects</a></h2>
-                </div>
-                <div class="row gx-0">
-                    <div class="col-lg-6" style="padding-right: 1.5mm;">
-                        <a class="portfolio-item" href="https://github.com/GabrielPiercecchi/ProgettoProgrammazioneAvanzata">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Advanced Programming Master's Course Project</div>
-                                    <p class="mb-0">A system has been implemented to manage a Tutor-type ticket manager. Specifically, this application should allow users, authenticated through JWT, to manage and create the entire structure that enables the automatic creation of tickets. Realized in collaboration with <a href="https://github.com/FrancescoParisi02">Francesco Romeo Parisi</a></p>
-                                </div>
-                            </div>
-                            <!--<img class="img-fluid" src="assets/img/portfolio-1.png" alt="..." />-->
-                        </a>
-                    </div>
-                    <div class="col-lg-6" style="padding-left: 1.5mm;">
-                        <a class="portfolio-item" href="https://github.com/GabrielPiercecchi/progettoPiercecchiRossi">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Open Weather Application</div>
-                                    <p class="mb-0">The main purpose of this project is to develop a Java application that performs a comparative analysis of statistical data (minimum, maximum, mean, and variance values of perceived and actual temperature) related to weather information of two cities entered by the user through the terminal. Produced in collaboration with <a href="https://github.com/AlanRossi01">Alan Rossi</a></p>
-                                </div>
-                            </div>
-                            <!--<img class="img-fluid" src="assets/img/portfolio-2.png" alt="..." />-->
-                        </a>
-                    </div>
-                </div>
+            <p class="w3-wide">Develop Web & App</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:95%"></div>
             </div>
-        </section>
-        
-        <!-- Map-->
-        <section class="content-section text-white text-center" id="contact">
-            <h2>Contact Me</h2>
-            
-            <a class="contact-link" href="https://t.me/GabboP"><i class="fa-brands fa-telegram"></i> GabboP</a><br>
-            <a class="contact-link" href="https://github.com/GabrielPiercecchi"><i class="fa-brands fa-github"></i> GabrielPiercecchi</a><br>
-            <a class="contact-link" href="mailto:gabriel.piercecchi@gmail.com"><i class="fa-solid fa-envelope-open"></i> gabriel.piercechi@gmail.com</a>
-        </section>
+            <p class="w3-wide">Office 365</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+            </div><br>
 
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container px-4 px-lg-5">
-                <p class="text-white small mb-0">Copyright &copy; Gabriel Piercecchi (GabboP), 2022</p>
+            <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">8+</span><br>
+                    Partners
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">10+</span><br>
+                    Projects Done
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">12+</span><br>
+                    Happy Clients
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">100+</span><br>
+                    Meetings
+                </div>
             </div>
+
+            <a href="cv.pdf" download="./Curriculum_Vitae_OverLeaf.pdf" style="text-decoration: none;">
+                <button class="w3-button w3-light-grey w3-padding-large w3-section">
+                    <i class="fa fa-download"></i> Download Resume
+                </button>
+            </a>
+
+            <!-- Grid for pricing tables -->
+            <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half w3-margin-bottom">
+                    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+                        <li class="w3-padding-16">Develop App or Website</li>
+                        <li class="w3-padding-16">Penetration Test</li>
+                        <li class="w3-padding-16">Endless Support</li>
+                        <li class="w3-padding-16">
+                            <h2>€ 10</h2>
+                            <span class="w3-opacity">per month</span>
+                        </li>
+                        <!-- <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li> -->
+                    </ul>
+                </div>
+
+                <div class="w3-half">
+                    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+                        <li class="w3-padding-16">Develop App or Website</li>
+                        <li class="w3-padding-16">Penetration Test</li>
+                        <li class="w3-padding-16">Endless Support</li>
+                        <li class="w3-padding-16">
+                            <h2>€ 25</h2>
+                            <span class="w3-opacity">per month</span>
+                        </li>
+                        <!-- <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li> -->
+                    </ul>
+                </div>
+                <!-- End Grid/Pricing tables -->
+            </div>
+
+            <!-- Testimonials -->
+            <h3 class="w3-padding-24 w3-text-light-grey">Work Experience</h3>
+            <img src="./alternanzaScuolaLavoro.png" alt="Avatar" class="w3-left w3-circle w3-margin-right"
+                style="width:80px">
+            <p><span class="w3-large w3-margin-right">School-To-Work Alternation.</span>11/06/2018 - 30/08/2018, Ancona
+                (IT)</p>
+            <p>The position held was as an employee at Giocabene S.r.l. in Ancona, Italy.</p>
+
+            <!-- <br> -->
+
+            <!-- <img src="https://www.w3schools.com/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+    <p>No one is better than John Doe.</p> -->
+            <!-- End About Section -->
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="w3-padding-64 w3-content" id="projects">
+            <h2 class="w3-text-light-grey">My Projects</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <!-- Grid for photos -->
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half">
+                    <p>At the following <a href="https://github.com/GabrielPiercecchi?tab=repositories">addres</a> there
+                        is a collection of projects done for exams at the Universitá Politecninca delle Marche (italy).
+                    </p>
+                    <br>
+                    <img src="./assets/coupon.png" style="width:100%">
+                    <img src="./assets/softEBlock.png" style="width:100%">
+                    <img src="./assets/manutenzione.png" style="width:100%">
+                </div>
+
+                <div class="w3-half">
+                    <img src="./assets/meteo.png" style="width:100%">
+                    <img src="./assets/tutor.png" style="width:100%">
+                    <img src="./assets/basiDiDati.png" style="width:100%">
+                </div>
+                <!-- End photo grid -->
+            </div>
+            <!-- End Portfolio Section -->
+        </div>
+
+        <!-- Contact Section -->
+        <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+            <h2 class="w3-text-light-grey">Contact Me</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <div class="w3-section">
+                <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Porto Recanati, IT
+                </p>
+                <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +39 2518703833</p>
+                <p><a class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"
+                        href="mailto:gabriel.piercecchi@gmail.com" style="text-decoration: none;"></a> <a
+                        href="mailto:gabriel.piercecchi@gmail.com" style="text-decoration: none;">Email:
+                        gabriel.piercecchi@gmail.com</a></p>
+            </div><br>
+            <p><b style="color: red;">Not Yet Implemented</b><br>Let's get in touch. Send me a message:</p>
+
+            <form id="contactForm" method="POST">
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+                <p>
+                    <button id="submitButton" class="w3-button w3-light-grey w3-padding-large" type="submit">
+                        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                    </button>
+                </p>
+            </form>
+            <!-- End Contact Section -->
+        </div>
+
+        <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+        <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge w3-center">
+            <p><b>Other Way to Reach Me</b></p>
+            <a class="fa fa-telegram w3-hover-opacity" href="https://t.me/GabboP" style="text-decoration: none;""> GabboP</a>
+            <br>
+            <a class=" fa fa-github w3-hover-opacity" href="https://github.com/GabrielPiercecchi"
+                style="text-decoration: none;""> GabrielPiercecchi</a>
+            <!-- <i class=" fa fa-linkedin w3-hover-opacity"></i> -->
+                <!-- End footer -->
         </footer>
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
-        
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <!-- END PAGE CONTENT -->
+    </div>
 
-        <!-- age calc -->
-        <script src="js/ageCalc.js"></script>
-    </body>
+</body>
+
 </html>
