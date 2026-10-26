@@ -1,169 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Gabriel Piercecchi — Computer and Automation Engineer and Cybersecurity Consultant. Microsoft Security, identity protection, software development and cloud technologies.">
+
+    <meta name="description"
+        content="Gabriel Piercecchi — Computer and Automation Engineer and Cybersecurity Consultant. Microsoft Security, identity protection, software development and cloud technologies.">
+
     <meta name="theme-color" content="#000000">
+
     <title>Gabriel Piercecchi | Cybersecurity Consultant</title>
 
+    <!-- External libraries -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 
+    <!-- ALL CUSTOM CSS IS INSIDE INDEX.HTML -->
     <style>
-        html { scroll-behavior: smooth; }
+
+        /* GENERAL STYLE */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body, h1, h2, h3, h4, h5, h6 {
             font-family: "Montserrat", sans-serif;
         }
-        .w3-sidebar { width: 120px; background: #222; }
-        #main { margin-left: 120px; }
-        .w3-content { max-width: 980px; }
 
-        a { text-underline-offset: 3px; }
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        #main {
+            margin-left: 120px;
+        }
+
+        .w3-content {
+            max-width: 980px;
+        }
+
+        a {
+            text-underline-offset: 3px;
+        }
+
         a:focus-visible {
             outline: 2px solid #fff;
             outline-offset: 4px;
         }
-        .intro {
-            max-width: 750px;
-            margin: 12px auto 0;
-            line-height: 1.75;
-        }
-        .muted { color: #bdbdbd; }
 
-        .skill-group { margin: 23px 0; }
+        .muted {
+            color: #bdbdbd;
+        }
+
+
+        /* ABOUT ME */
+
+        .intro {
+            width: 100%;
+            max-width: none;
+            margin: 14px 0 24px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+
+        /* SKILLS */
+
+        .skill-group {
+            margin: 23px 0;
+        }
+
         .skill-group h4 {
             color: #e7e7e7;
             font-size: 17px;
             margin-bottom: 7px;
         }
+
         .skill-group p {
             color: #c6c6c6;
             line-height: 1.85;
             margin-top: 0;
         }
 
+
+        /* EDUCATION AND EXPERIENCE */
+
         .career-item {
             border-left: 3px solid #777;
             padding: 0 0 8px 18px;
             margin-bottom: 28px;
         }
+
         .career-item h3 {
             margin-top: 0;
             margin-bottom: 5px;
             font-size: 20px;
         }
+
         .career-item .dates {
             color: #a9a9a9;
             margin: 5px 0 13px;
         }
-        .career-item p { line-height: 1.75; }
+
+        .career-item p {
+            line-height: 1.75;
+        }
+
+
+        /* PROJECTS - UNIFORM GRID */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 24px;
+            align-items: stretch;
+        }
 
         .project-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             background: #191919;
             border: 1px solid #424242;
             padding: 23px;
-            margin-bottom: 22px;
-            min-height: 250px;
+            margin: 0;
+            min-height: 0;
+            min-width: 0;
         }
+
+        .project-card .project-footer {
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        .project-card .project-footer p:last-child {
+            margin-bottom: 0;
+        }
+
         .project-card h3 {
             margin: 9px 0 13px;
             font-size: 20px;
         }
+
         .project-card p {
             color: #c6c6c6;
             line-height: 1.7;
         }
+
         .project-card .eyebrow {
             color: #a4a4a4;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1.8px;
         }
+
         .project-card .tech {
             font-size: 12px;
             color: #e1e1e1;
         }
+
         .project-card a {
             color: #f1f1f1;
             font-weight: bold;
         }
+
+        .project-card a:hover {
+            color: #bdbdbd;
+        }
+
+
+        /* CONTACT */
+
         .resume-note {
             color: #bdbdbd;
             font-size: 13px;
             margin-top: 12px;
         }
+
         .contact-row {
             margin-bottom: 19px;
             overflow-wrap: anywhere;
         }
-        .contact-row i { width: 40px; }
+
+        .contact-row i {
+            width: 40px;
+        }
+
+
+        /* RESPONSIVE DESIGN */
 
         @media only screen and (max-width: 600px) {
-            #main { margin-left: 0; }
-            #home { padding-top: 72px !important; }
-            .project-card { min-height: auto; }
+
+            #main {
+                margin-left: 0;
+            }
+
+            #home {
+                padding-top: 72px !important;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .project-card {
+                min-height: 0;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 840px) {
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
+
+            html {
+                scroll-behavior: auto;
+            }
         }
+
     </style>
 </head>
 
+
 <body class="w3-black">
 
-    <!-- Sidebar navigation -->
-    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center" aria-label="Main navigation">
-        <img src="./assets/img/avatar.jpg" alt="Gabriel Piercecchi" style="width:100%">
+    <!-- SIDEBAR NAVIGATION -->
 
-        <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black" aria-label="Home">
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center"
+         aria-label="Main navigation">
+
+        <img
+            src="./assets/img/avatar.jpg"
+            alt="Gabriel Piercecchi"
+            style="width:100%"
+        >
+
+        <a href="#home"
+           class="w3-bar-item w3-button w3-padding-large w3-black">
+
             <i class="fa fa-home w3-xxlarge" aria-hidden="true"></i>
             <p>HOME</p>
         </a>
 
-        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black" aria-label="About">
+        <a href="#about"
+           class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+
             <i class="fa fa-user w3-xxlarge" aria-hidden="true"></i>
             <p>ABOUT</p>
         </a>
 
-        <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black" aria-label="Projects">
+        <a href="#projects"
+           class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+
             <i class="fa fa-code w3-xxlarge" aria-hidden="true"></i>
             <p>PROJECTS</p>
         </a>
 
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black" aria-label="Contact">
+        <a href="#contact"
+           class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+
             <i class="fa fa-envelope w3-xxlarge" aria-hidden="true"></i>
             <p>CONTACT</p>
         </a>
+
     </nav>
 
-    <!-- Mobile navigation -->
-    <nav class="w3-top w3-hide-large w3-hide-medium" id="myNavbar" aria-label="Mobile navigation">
+
+    <!-- MOBILE NAVIGATION -->
+
+    <nav class="w3-top w3-hide-large w3-hide-medium"
+         id="myNavbar"
+         aria-label="Mobile navigation">
+
         <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-            <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-            <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
-            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+
+            <a href="#home"
+               class="w3-bar-item w3-button"
+               style="width:25% !important">
+                HOME
+            </a>
+
+            <a href="#about"
+               class="w3-bar-item w3-button"
+               style="width:25% !important">
+                ABOUT
+            </a>
+
+            <a href="#projects"
+               class="w3-bar-item w3-button"
+               style="width:25% !important">
+                PROJECTS
+            </a>
+
+            <a href="#contact"
+               class="w3-bar-item w3-button"
+               style="width:25% !important">
+                CONTACT
+            </a>
+
         </div>
     </nav>
 
+
     <main class="w3-padding-large" id="main">
 
-        <!-- Home -->
-        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+        <!-- HOME -->
+
+        <header class="w3-container w3-padding-32 w3-center w3-black"
+                id="home">
+
             <h1 class="w3-jumbo">
-                <span class="w3-hide-small">I'm</span> Gabriel Piercecchi.
+                <span class="w3-hide-small">I'm</span>
+                Gabriel Piercecchi.
             </h1>
 
             <h2 class="w3-xlarge w3-text-light-grey">
-                Cybersecurity Consultant | Computer &amp; Automation Engineer
+                Cybersecurity Consultant |
+                Computer &amp; Automation Engineer
             </h2>
 
             <p class="muted">
-                Microsoft Security &nbsp;·&nbsp; Identity Protection &nbsp;·&nbsp; Software Engineering
+                Microsoft Security &nbsp;·&nbsp;
+                Identity Protection &nbsp;·&nbsp;
+                Software Engineering
             </p>
 
             <img
@@ -172,395 +342,551 @@
                 class="w3-image"
                 style="width:46%;max-width:520px;height:auto"
             >
+
         </header>
 
-        <!-- About -->
-        <section class="w3-content w3-justify w3-padding-64" id="about" aria-labelledby="about-title">
 
-            <h2 class="w3-text-light-grey" id="about-title">About Me</h2>
+        <!-- ABOUT ME -->
+
+        <section class="w3-content w3-padding-64"
+                 id="about"
+                 aria-labelledby="about-title">
+
+            <h2 class="w3-text-light-grey" id="about-title">
+                About Me
+            </h2>
+
             <hr style="width:200px" class="w3-opacity">
 
             <p class="intro">
                 I'm Gabriel Piercecchi, a Computer and Automation Engineer
                 (MSc, <strong>110/110</strong>) from
-                <a href="https://www.univpm.it/Entra/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.univpm.it/Entra/"
+                   target="_blank"
+                   rel="noopener noreferrer">
                     Università Politecnica delle Marche
                 </a>.
                 Since October 2026, I have been working at
                 <strong>Cluster Reply</strong> as a
                 <strong>Cybersecurity Consultant</strong>,
-                focusing on Microsoft Security technologies and developing
-                my knowledge of cloud solutions and AI agents.
+                focusing on Microsoft Security technologies
+                and developing my knowledge of cloud solutions
+                and AI agents.
             </p>
 
             <p class="intro">
                 Previously, I gained hands-on experience in enterprise
                 cybersecurity at <strong>PRADA Group</strong>,
-                working with security monitoring, Microsoft security solutions
-                and the external Security Operations Center (SOC).
-                My master's thesis was based on an authentication-security
-                case study at PRADA, exploring identity protection,
-                monitoring and automation using Microsoft technologies.
+                working with security monitoring, Microsoft security
+                solutions and the external Security Operations Center
+                (SOC). My master's thesis was based on an
+                authentication-security case study at PRADA,
+                exploring identity protection, monitoring and
+                automation using Microsoft technologies.
             </p>
 
             <p class="intro">
                 Beyond cybersecurity, I enjoy software development,
-                Linux, cloud technologies and building practical solutions.
-                My academic projects span backend development, blockchain,
-                data analysis and machine learning.
+                Linux, cloud technologies and building practical
+                solutions. My academic projects span backend development,
+                blockchain, data analysis and machine learning.
             </p>
 
-            <!-- Skills -->
-            <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+
+            <!-- SKILLS -->
+
+            <h3 class="w3-padding-16 w3-text-light-grey">
+                My Skills
+            </h3>
 
             <div class="skill-group">
+
                 <h4>
                     <i class="fa fa-shield" aria-hidden="true"></i>
                     Cybersecurity &amp; Microsoft Security
                 </h4>
+
                 <p>
-                    Microsoft Sentinel · Microsoft Defender for Endpoint ·
-                    Microsoft Defender for Cloud Apps · Microsoft Entra ID ·
-                    SIEM · SOC · Security Monitoring ·
+                    Microsoft Sentinel ·
+                    Microsoft Defender for Endpoint ·
+                    Microsoft Defender for Cloud Apps ·
+                    Microsoft Entra ID ·
+                    SIEM · SOC ·
+                    Security Monitoring ·
                     Identity &amp; Authentication Security
                 </p>
+
             </div>
 
             <div class="skill-group">
+
                 <h4>
                     <i class="fa fa-cogs" aria-hidden="true"></i>
                     Security Automation &amp; Cloud
                 </h4>
+
                 <p>
-                    KQL · Azure Log Analytics · Azure Logic Apps ·
-                    Security Alerts · Microsoft Azure · Cloud Security ·
+                    KQL ·
+                    Azure Log Analytics ·
+                    Azure Logic Apps ·
+                    Security Alerts ·
+                    Microsoft Azure ·
+                    Cloud Security ·
                     AI Agents (currently exploring)
                 </p>
+
             </div>
 
             <div class="skill-group">
+
                 <h4>
                     <i class="fa fa-code" aria-hidden="true"></i>
                     Programming &amp; Development
                 </h4>
+
                 <p>
-                    Python · Java · C/C++ · JavaScript · TypeScript ·
-                    SQL · HTML/CSS · Spring Boot · Flutter ·
+                    Python · Java · C/C++ ·
+                    JavaScript · TypeScript · SQL ·
+                    HTML/CSS · Spring Boot · Flutter ·
                     Docker · Git · Linux
                 </p>
+
             </div>
 
             <div class="skill-group">
+
                 <h4>
                     <i class="fa fa-database" aria-hidden="true"></i>
                     Data &amp; Other Technologies
                 </h4>
+
                 <p>
-                    PostgreSQL · MySQL · MongoDB · Power BI ·
-                    Qlik · Tableau · TensorFlow · PyTorch ·
+                    PostgreSQL · MySQL · MongoDB ·
+                    Power BI · Qlik · Tableau ·
+                    TensorFlow · PyTorch ·
                     Ethereum · Solidity · Hyperledger Besu
                 </p>
+
             </div>
 
-            <!-- Academic and professional milestones -->
+
+            <!-- PROFESSIONAL MILESTONES -->
+
             <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+
                 <div class="w3-quarter w3-section">
                     <span class="w3-xlarge">110/110</span><br>
                     MSc Final Grade
                 </div>
+
                 <div class="w3-quarter w3-section">
                     <span class="w3-xlarge">2026</span><br>
                     Master's Graduation
                 </div>
+
                 <div class="w3-quarter w3-section">
                     <span class="w3-xlarge">PRADA</span><br>
                     Security Internship
                 </div>
+
                 <div class="w3-quarter w3-section">
                     <span class="w3-xlarge">Reply</span><br>
                     Cybersecurity Consulting
                 </div>
+
             </div>
 
+
+            <!-- CV -->
+
             <p class="resume-note">
-                For my latest CV and professional details, please contact me by email.
-                My online resume will be re-added when the updated PDF is available.
+                For my latest CV and professional details,
+                please contact me by email.
+                My online resume will be re-added when
+                the updated PDF is available.
             </p>
 
-            <!-- Education -->
-            <h2 class="w3-padding-24 w3-text-light-grey">Education</h2>
+
+            <!-- EDUCATION -->
+
+            <h2 class="w3-padding-24 w3-text-light-grey">
+                Education
+            </h2>
 
             <div class="career-item">
-                <h3>Master's Degree in Computer and Automation Engineering</h3>
+
+                <h3>
+                    Master's Degree in Computer and Automation Engineering
+                </h3>
+
                 <p class="dates">
                     Università Politecnica delle Marche ·
-                    Graduated 16 October 2026 · 110/110
+                    Graduated 16 October 2026 ·
+                    110/110
                 </p>
+
                 <p>
                     Master's thesis on authentication policies,
                     identity protection and security automation
                     based on a PRADA Group case study.
                 </p>
+
             </div>
 
             <div class="career-item">
-                <h3>Bachelor's Degree in Computer Engineering</h3>
+
+                <h3>
+                    Bachelor's Degree in Computer Engineering
+                </h3>
+
                 <p class="dates">
                     Università Politecnica delle Marche ·
                     Graduated 22 February 2024
                 </p>
+
             </div>
 
-            <!-- Work experience -->
-            <h2 class="w3-padding-24 w3-text-light-grey">My Work Experience</h2>
+
+            <!-- WORK EXPERIENCE -->
+
+            <h2 class="w3-padding-24 w3-text-light-grey">
+                My Work Experience
+            </h2>
 
             <div class="career-item">
+
                 <h3>
                     Cybersecurity Consultant
-                    <span class="w3-text-grey">— Cluster Reply</span>
+                    <span class="w3-text-grey">
+                        — Cluster Reply
+                    </span>
                 </h3>
+
                 <p class="dates">
                     19 October 2026 – Present · Milan, Italy
                 </p>
+
                 <p>
-                    Working in IT consulting with a focus on Microsoft
-                    Security solutions and cloud technologies.
+                    Working in IT consulting with a focus on
+                    Microsoft Security solutions and cloud technologies.
                     Currently broadening my experience with AI agents
                     and enterprise automation.
                 </p>
+
             </div>
 
             <div class="career-item">
+
                 <h3>
                     IT Security Intern
-                    <span class="w3-text-grey">— PRADA Group</span>
+                    <span class="w3-text-grey">
+                        — PRADA Group
+                    </span>
                 </h3>
+
                 <p class="dates">
                     1 September 2025 – 28 February 2026 · Milan, Italy
                 </p>
+
                 <p>
-                    Supported enterprise security monitoring and incident
-                    analysis, collaborating with an external SOC and working
-                    with Microsoft Sentinel, Microsoft Defender for Endpoint
-                    and Microsoft Defender for Cloud Apps.
-                    My master's thesis explored authentication security
-                    and automation in this context.
+                    Supported enterprise security monitoring and
+                    incident analysis, collaborating with an external
+                    SOC and working with Microsoft Sentinel,
+                    Microsoft Defender for Endpoint and
+                    Microsoft Defender for Cloud Apps.
+                    My master's thesis explored authentication
+                    security and automation in this context.
                 </p>
+
             </div>
 
             <div class="career-item">
+
                 <h3>
                     School-to-Work Alternation
-                    <span class="w3-text-grey">— Giocabene S.r.l.</span>
+                    <span class="w3-text-grey">
+                        — Giocabene S.r.l.
+                    </span>
                 </h3>
+
                 <p class="dates">
                     11 June 2018 – 30 August 2018 · Ancona, Italy
                 </p>
+
                 <p>
                     Assisted customers with product selection,
                     assembled display items and supported
                     checkout operations during busy periods.
                 </p>
+
             </div>
 
         </section>
 
-        <!-- Projects -->
-        <section class="w3-padding-64 w3-content" id="projects" aria-labelledby="projects-title">
 
-            <h2 class="w3-text-light-grey" id="projects-title">My Projects</h2>
+        <!-- PROJECTS -->
+
+        <section class="w3-padding-64 w3-content"
+                 id="projects"
+                 aria-labelledby="projects-title">
+
+            <h2 class="w3-text-light-grey" id="projects-title">
+                My Projects
+            </h2>
+
             <hr style="width:200px" class="w3-opacity">
 
             <p class="muted">
-                Selected academic and technical work.
-                I've replaced the old decorative image gallery
-                with short descriptions and links to actual
+                Selected academic and technical projects,
+                with descriptions and links to their
                 repositories where available.
             </p>
 
-            <div class="w3-row-padding" style="margin:24px -16px 0">
 
-                <!-- Thesis project -->
-                <div class="w3-half">
-                    <article class="project-card">
-                        <span class="eyebrow">
-                            Master's thesis · Enterprise cybersecurity
-                        </span>
+            <!-- PROJECT GRID -->
 
-                        <h3>Authentication Security &amp; Automation</h3>
+            <div class="projects-grid">
 
-                        <p>
-                            Explored authentication policies,
-                            identity protection and an automated
-                            security-monitoring workflow through
-                            a PRADA Group case study.
-                        </p>
+                <!-- PROJECT 1: MASTER'S THESIS -->
+
+                <article class="project-card">
+
+                    <span class="eyebrow">
+                        Master's thesis · Enterprise cybersecurity
+                    </span>
+
+                    <h3>
+                        Authentication Security &amp; Automation
+                    </h3>
+
+                    <p>
+                        Explored authentication policies,
+                        identity protection and an automated
+                        security-monitoring workflow through
+                        a PRADA Group case study.
+                    </p>
+
+                    <div class="project-footer">
 
                         <p class="tech">
-                            Microsoft Entra ID · Microsoft Sentinel ·
-                            KQL · Azure Logic Apps
+                            Microsoft Entra ID ·
+                            Microsoft Sentinel ·
+                            KQL ·
+                            Azure Logic Apps
                         </p>
 
                         <p class="muted">
-                            Professional case study — source code not publicly shared.
+                            Professional case study —
+                            source code not publicly shared.
                         </p>
-                    </article>
-                </div>
 
-                <!-- Blockchain project -->
-                <div class="w3-half">
-                    <article class="project-card">
-                        <span class="eyebrow">
-                            University project · Blockchain
-                        </span>
+                    </div>
 
-                        <h3>Supply Chain Traceability &amp; Sustainability</h3>
+                </article>
 
-                        <p>
-                            Blockchain-based application to follow
-                            products across a supply chain and record
-                            CO₂ emissions, with smart contracts
-                            and data reporting.
-                        </p>
+
+                <!-- PROJECT 2: BLOCKCHAIN -->
+
+                <article class="project-card">
+
+                    <span class="eyebrow">
+                        University project · Blockchain
+                    </span>
+
+                    <h3>
+                        Supply Chain Traceability &amp; Sustainability
+                    </h3>
+
+                    <p>
+                        Blockchain-based application to follow
+                        products across a supply chain and record
+                        CO₂ emissions, with smart contracts
+                        and data reporting.
+                    </p>
+
+                    <div class="project-footer">
 
                         <p class="tech">
-                            Python · Flask · Hyperledger Besu ·
+                            Python · Flask ·
+                            Hyperledger Besu ·
                             Solidity · PostgreSQL · Docker
                         </p>
 
                         <a
                             href="https://github.com/GabrielPiercecchi/SoftwareSecurity-BlockchainProject"
                             target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                            rel="noopener noreferrer">
+
                             View repository
                             <i class="fa fa-external-link" aria-hidden="true"></i>
+
                         </a>
-                    </article>
-                </div>
 
-                <!-- Advanced programming -->
-                <div class="w3-half">
-                    <article class="project-card">
-                        <span class="eyebrow">
-                            University project · Backend development
-                        </span>
+                    </div>
 
-                        <h3>Advanced Programming Project</h3>
+                </article>
 
-                        <p>
-                            Collaborative TypeScript backend project
-                            involving data models, controllers,
-                            database migrations, middleware
-                            and API development.
-                        </p>
+
+                <!-- PROJECT 3: ADVANCED PROGRAMMING -->
+
+                <article class="project-card">
+
+                    <span class="eyebrow">
+                        University project · Backend development
+                    </span>
+
+                    <h3>
+                        Advanced Programming Project
+                    </h3>
+
+                    <p>
+                        Collaborative TypeScript backend project
+                        involving data models, controllers,
+                        database migrations, middleware
+                        and API development.
+                    </p>
+
+                    <div class="project-footer">
 
                         <p class="tech">
-                            TypeScript · Node.js · Docker · Databases
+                            TypeScript · Node.js ·
+                            Docker · Databases
                         </p>
 
                         <a
                             href="https://github.com/GabrielPiercecchi/ProgettoProgrammazioneAvanzata"
                             target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                            rel="noopener noreferrer">
+
                             View repository
                             <i class="fa fa-external-link" aria-hidden="true"></i>
+
                         </a>
-                    </article>
-                </div>
 
-                <!-- Additional projects -->
-                <div class="w3-half">
-                    <article class="project-card">
-                        <span class="eyebrow">
-                            Portfolio · Academic software
-                        </span>
+                    </div>
 
-                        <h3>Additional Software &amp; Security Projects</h3>
+                </article>
 
-                        <p>
-                            A collection of university projects
-                            covering web technologies, programming,
-                            software security and other practical
-                            engineering topics.
-                        </p>
+
+                <!-- PROJECT 4: ADDITIONAL PROJECTS -->
+
+                <article class="project-card">
+
+                    <span class="eyebrow">
+                        Portfolio · Academic software
+                    </span>
+
+                    <h3>
+                        Additional Software &amp; Security Projects
+                    </h3>
+
+                    <p>
+                        A collection of university projects
+                        covering web technologies, programming,
+                        software security and other practical
+                        engineering topics.
+                    </p>
+
+                    <div class="project-footer">
 
                         <p class="tech">
-                            Web Development · Programming · Cybersecurity
+                            Web Development ·
+                            Programming · Cybersecurity
                         </p>
 
                         <a
                             href="https://github.com/GabrielPiercecchi"
                             target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                            rel="noopener noreferrer">
+
                             Explore GitHub profile
                             <i class="fa fa-external-link" aria-hidden="true"></i>
+
                         </a>
-                    </article>
-                </div>
+
+                    </div>
+
+                </article>
 
             </div>
+
         </section>
 
-        <!-- Contact -->
-        <section class="w3-padding-64 w3-content" id="contact" aria-labelledby="contact-title">
 
-            <h2 class="w3-text-light-grey" id="contact-title">Contact Me</h2>
+        <!-- CONTACT -->
+
+        <section class="w3-padding-64 w3-content"
+                 id="contact"
+                 aria-labelledby="contact-title">
+
+            <h2 class="w3-text-light-grey" id="contact-title">
+                Contact Me
+            </h2>
+
             <hr style="width:200px" class="w3-opacity">
 
             <div class="w3-section">
 
                 <p class="contact-row">
-                    <i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right" aria-hidden="true"></i>
+                    <i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"
+                       aria-hidden="true"></i>
                     Italy · Working in Milan
                 </p>
 
                 <p class="contact-row">
-                    <i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right" aria-hidden="true"></i>
+                    <i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"
+                       aria-hidden="true"></i>
                     <a href="mailto:gabriel.piercecchi@gmail.com">
                         gabriel.piercecchi@gmail.com
                     </a>
                 </p>
 
                 <p class="contact-row">
-                    <i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right" aria-hidden="true"></i>
-                    <a
-                        href="https://github.com/GabrielPiercecchi"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"
+                       aria-hidden="true"></i>
+
+                    <a href="https://github.com/GabrielPiercecchi"
+                       target="_blank"
+                       rel="noopener noreferrer">
                         github.com/GabrielPiercecchi
                     </a>
                 </p>
 
                 <p class="contact-row">
-                    <i class="fa fa-telegram fa-fw w3-text-white w3-xxlarge w3-margin-right" aria-hidden="true"></i>
-                    <a
-                        href="https://t.me/GabboP"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <i class="fa fa-telegram fa-fw w3-text-white w3-xxlarge w3-margin-right"
+                       aria-hidden="true"></i>
+
+                    <a href="https://t.me/GabboP"
+                       target="_blank"
+                       rel="noopener noreferrer">
                         Telegram: GabboP
                     </a>
                 </p>
 
             </div>
+
         </section>
 
-        <!-- Footer -->
+
+        <!-- FOOTER -->
+
         <footer class="w3-content w3-padding-64 w3-xlarge w3-center">
+
             <p class="w3-medium muted">
                 Copyright &copy; Gabriel Piercecchi,
                 <span id="year">2026</span>
             </p>
+
         </footer>
 
     </main>
 
+
+    <!-- JAVASCRIPT INSIDE INDEX.HTML -->
+
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('year').textContent =
+            new Date().getFullYear();
     </script>
 
 </body>
