@@ -1,280 +1,567 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Gabriel Piercecchi's Personal Site</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gabriel Piercecchi — Computer and Automation Engineer and Cybersecurity Consultant. Microsoft Security, identity protection, software development and cloud technologies.">
+    <meta name="theme-color" content="#000000">
+    <title>Gabriel Piercecchi | Cybersecurity Consultant</title>
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <!-- To check scipt integrity use https://srihash.org/  -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
-    <script src="assets\js\ageCalc.js"></script>
-    <script src="assets/js/form.js"></script>
-    <script src="assets/js/updateYear.js"></script>
-    <script src="assets/"></script>
+
     <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: "Montserrat", sans-serif
+        html { scroll-behavior: smooth; }
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif;
+        }
+        .w3-sidebar { width: 120px; background: #222; }
+        #main { margin-left: 120px; }
+        .w3-content { max-width: 980px; }
+
+        a { text-underline-offset: 3px; }
+        a:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+        .intro {
+            max-width: 750px;
+            margin: 12px auto 0;
+            line-height: 1.75;
+        }
+        .muted { color: #bdbdbd; }
+
+        .skill-group { margin: 23px 0; }
+        .skill-group h4 {
+            color: #e7e7e7;
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+        .skill-group p {
+            color: #c6c6c6;
+            line-height: 1.85;
+            margin-top: 0;
         }
 
-        .w3-row-padding img {
-            margin-bottom: 12px
+        .career-item {
+            border-left: 3px solid #777;
+            padding: 0 0 8px 18px;
+            margin-bottom: 28px;
         }
-
-        /* Set the width of the sidebar to 120px */
-        .w3-sidebar {
-            width: 120px;
-            background: #222;
+        .career-item h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 20px;
         }
-
-        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-        #main {
-            margin-left: 120px
+        .career-item .dates {
+            color: #a9a9a9;
+            margin: 5px 0 13px;
         }
+        .career-item p { line-height: 1.75; }
 
-        /* Remove margins from "page content" on small screens */
+        .project-card {
+            background: #191919;
+            border: 1px solid #424242;
+            padding: 23px;
+            margin-bottom: 22px;
+            min-height: 250px;
+        }
+        .project-card h3 {
+            margin: 9px 0 13px;
+            font-size: 20px;
+        }
+        .project-card p {
+            color: #c6c6c6;
+            line-height: 1.7;
+        }
+        .project-card .eyebrow {
+            color: #a4a4a4;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+        }
+        .project-card .tech {
+            font-size: 12px;
+            color: #e1e1e1;
+        }
+        .project-card a {
+            color: #f1f1f1;
+            font-weight: bold;
+        }
+        .resume-note {
+            color: #bdbdbd;
+            font-size: 13px;
+            margin-top: 12px;
+        }
+        .contact-row {
+            margin-bottom: 19px;
+            overflow-wrap: anywhere;
+        }
+        .contact-row i { width: 40px; }
+
         @media only screen and (max-width: 600px) {
-            #main {
-                margin-left: 0
-            }
+            #main { margin-left: 0; }
+            #home { padding-top: 72px !important; }
+            .project-card { min-height: auto; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
         }
     </style>
 </head>
 
 <body class="w3-black">
 
-    <!-- Icon Bar (Sidebar - hidden on small screens) -->
-    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-        <!-- Avatar image in top left corner -->
-        <img src="./assets/img/avatar.jpg" style="width:100%">
-        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-            <i class="fa fa-home w3-xxlarge"></i>
+    <!-- Sidebar navigation -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center" aria-label="Main navigation">
+        <img src="./assets/img/avatar.jpg" alt="Gabriel Piercecchi" style="width:100%">
+
+        <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black" aria-label="Home">
+            <i class="fa fa-home w3-xxlarge" aria-hidden="true"></i>
             <p>HOME</p>
         </a>
-        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-user w3-xxlarge"></i>
+
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black" aria-label="About">
+            <i class="fa fa-user w3-xxlarge" aria-hidden="true"></i>
             <p>ABOUT</p>
         </a>
-        <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-eye w3-xxlarge"></i>
+
+        <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black" aria-label="Projects">
+            <i class="fa fa-code w3-xxlarge" aria-hidden="true"></i>
             <p>PROJECTS</p>
         </a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-envelope w3-xxlarge"></i>
+
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black" aria-label="Contact">
+            <i class="fa fa-envelope w3-xxlarge" aria-hidden="true"></i>
             <p>CONTACT</p>
         </a>
     </nav>
 
-    <!-- Navbar on small screens (Hidden on medium and large screens) -->
-    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+    <!-- Mobile navigation -->
+    <nav class="w3-top w3-hide-large w3-hide-medium" id="myNavbar" aria-label="Mobile navigation">
         <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-            <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+            <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
             <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
             <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
             <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
         </div>
-    </div>
+    </nav>
 
-    <!-- Page Content -->
-    <div class="w3-padding-large" id="main">
-        <!-- Header/Home -->
+    <main class="w3-padding-large" id="main">
+
+        <!-- Home -->
         <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-            <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Gabriel Piercecchi.</h1>
-            <h3>Web & App Developer / Penetration Tester</h3>
-            <img src="./assets/img/copertina.png" alt="boy" class="w3-image" width="46%" height="46%">
+            <h1 class="w3-jumbo">
+                <span class="w3-hide-small">I'm</span> Gabriel Piercecchi.
+            </h1>
+
+            <h2 class="w3-xlarge w3-text-light-grey">
+                Cybersecurity Consultant | Computer &amp; Automation Engineer
+            </h2>
+
+            <p class="muted">
+                Microsoft Security &nbsp;·&nbsp; Identity Protection &nbsp;·&nbsp; Software Engineering
+            </p>
+
+            <img
+                src="./assets/img/copertina.png"
+                alt="Personal website cover"
+                class="w3-image"
+                style="width:46%;max-width:520px;height:auto"
+            >
         </header>
 
-        <!-- About Section -->
-        <div class="w3-content w3-justify w3-padding-64" id="about">
-            <h2 class="w3-text-light-grey">My Name</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <p>My name is Gabriel Piercecchi, I am <span class="age">21</span> years old and I am currently a student
-                attending the Master's program in Computer and Automation Engineering at the Marche Polytechnic
-                University (<a href="https://www.univpm.it/Entra//">UNIVPM</a>).<br>
-                <br>I graduated in 2023 in Computer and Automation Engineering at UNIVPM and graduated, in 2020, from
-                the scientific high school <a href="https://www.liceogalileiancona.edu.it/">Galileo Galilei</a>, applied
-                sciences option, in Ancona.<br><br>
-                <br>I have been passionate about computers and, in general, computer science and programming for as long
-                as I can remember; especially I started writing my first projects in C, C++ since 2016, HTML/CSS/JS
-                since 2018, and I have been using Linux since 2020.
-            </p>
-            <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-            <p class="w3-wide">Penetration Test</p>
-            <div class="w3-white">
-                <div class="w3-dark-grey" style="height:28px;width:85%"></div>
-            </div>
-            <p class="w3-wide">Develop Web & App</p>
-            <div class="w3-white">
-                <div class="w3-dark-grey" style="height:28px;width:95%"></div>
-            </div>
-            <p class="w3-wide">Office 365</p>
-            <div class="w3-white">
-                <div class="w3-dark-grey" style="height:28px;width:80%"></div>
-            </div><br>
+        <!-- About -->
+        <section class="w3-content w3-justify w3-padding-64" id="about" aria-labelledby="about-title">
 
+            <h2 class="w3-text-light-grey" id="about-title">About Me</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <p class="intro">
+                I'm Gabriel Piercecchi, a Computer and Automation Engineer
+                (MSc, <strong>110/110</strong>) from
+                <a href="https://www.univpm.it/Entra/" target="_blank" rel="noopener noreferrer">
+                    Università Politecnica delle Marche
+                </a>.
+                Since October 2026, I have been working at
+                <strong>Cluster Reply</strong> as a
+                <strong>Cybersecurity Consultant</strong>,
+                focusing on Microsoft Security technologies and developing
+                my knowledge of cloud solutions and AI agents.
+            </p>
+
+            <p class="intro">
+                Previously, I gained hands-on experience in enterprise
+                cybersecurity at <strong>PRADA Group</strong>,
+                working with security monitoring, Microsoft security solutions
+                and the external Security Operations Center (SOC).
+                My master's thesis was based on an authentication-security
+                case study at PRADA, exploring identity protection,
+                monitoring and automation using Microsoft technologies.
+            </p>
+
+            <p class="intro">
+                Beyond cybersecurity, I enjoy software development,
+                Linux, cloud technologies and building practical solutions.
+                My academic projects span backend development, blockchain,
+                data analysis and machine learning.
+            </p>
+
+            <!-- Skills -->
+            <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+
+            <div class="skill-group">
+                <h4>
+                    <i class="fa fa-shield" aria-hidden="true"></i>
+                    Cybersecurity &amp; Microsoft Security
+                </h4>
+                <p>
+                    Microsoft Sentinel · Microsoft Defender for Endpoint ·
+                    Microsoft Defender for Cloud Apps · Microsoft Entra ID ·
+                    SIEM · SOC · Security Monitoring ·
+                    Identity &amp; Authentication Security
+                </p>
+            </div>
+
+            <div class="skill-group">
+                <h4>
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                    Security Automation &amp; Cloud
+                </h4>
+                <p>
+                    KQL · Azure Log Analytics · Azure Logic Apps ·
+                    Security Alerts · Microsoft Azure · Cloud Security ·
+                    AI Agents (currently exploring)
+                </p>
+            </div>
+
+            <div class="skill-group">
+                <h4>
+                    <i class="fa fa-code" aria-hidden="true"></i>
+                    Programming &amp; Development
+                </h4>
+                <p>
+                    Python · Java · C/C++ · JavaScript · TypeScript ·
+                    SQL · HTML/CSS · Spring Boot · Flutter ·
+                    Docker · Git · Linux
+                </p>
+            </div>
+
+            <div class="skill-group">
+                <h4>
+                    <i class="fa fa-database" aria-hidden="true"></i>
+                    Data &amp; Other Technologies
+                </h4>
+                <p>
+                    PostgreSQL · MySQL · MongoDB · Power BI ·
+                    Qlik · Tableau · TensorFlow · PyTorch ·
+                    Ethereum · Solidity · Hyperledger Besu
+                </p>
+            </div>
+
+            <!-- Academic and professional milestones -->
             <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
                 <div class="w3-quarter w3-section">
-                    <span class="w3-xlarge">8+</span><br>
-                    Partners
+                    <span class="w3-xlarge">110/110</span><br>
+                    MSc Final Grade
                 </div>
                 <div class="w3-quarter w3-section">
-                    <span class="w3-xlarge">10+</span><br>
-                    Projects Done
+                    <span class="w3-xlarge">2026</span><br>
+                    Master's Graduation
                 </div>
                 <div class="w3-quarter w3-section">
-                    <span class="w3-xlarge">12+</span><br>
-                    Happy Clients
+                    <span class="w3-xlarge">PRADA</span><br>
+                    Security Internship
                 </div>
                 <div class="w3-quarter w3-section">
-                    <span class="w3-xlarge">100+</span><br>
-                    Meetings
+                    <span class="w3-xlarge">Reply</span><br>
+                    Cybersecurity Consulting
                 </div>
             </div>
 
-            <a download="gabriel_piercecchi_CV.pdf" href="./assets/pdf/gabriel_piercecchi_CV.pdf" target="_blank" style="text-decoration: none;">
-                <button class="w3-button w3-light-grey w3-padding-large w3-section">
-                    <i class="fa fa-file-pdf-o"></i> Download my Resume
-                </button>
-            </a>
+            <p class="resume-note">
+                For my latest CV and professional details, please contact me by email.
+                My online resume will be re-added when the updated PDF is available.
+            </p>
 
-            <a download="Digital competences report.pdf" href="./assets/pdf/Digital competences report.pdf" target="_blank" style="text-decoration: none;">
-                <button class="w3-button w3-light-grey w3-padding-large w3-section">
-                    <i class="fa fa-file-pdf-o"></i> Download my Digital Competences
-                </button>
-            </a>
+            <!-- Education -->
+            <h2 class="w3-padding-24 w3-text-light-grey">Education</h2>
 
-            <!-- Grid for pricing tables -->
-            <!-- <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3> -->
-            <!-- <div class="w3-row-padding" style="margin:0 -16px">
-                <div class="w3-half w3-margin-bottom">
-                    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-                        <li class="w3-padding-16">Develop App or Website</li>
-                        <li class="w3-padding-16">Penetration Test</li>
-                        <li class="w3-padding-16">Endless Support</li>
-                        <li class="w3-padding-16">
-                            <h2>€ 10</h2>
-                            <span class="w3-opacity">per month</span>
-                        </li>
-                        <li class="w3-light-grey w3-padding-24">
-                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-                        </li>
-                    </ul>
-                </div> -->
+            <div class="career-item">
+                <h3>Master's Degree in Computer and Automation Engineering</h3>
+                <p class="dates">
+                    Università Politecnica delle Marche ·
+                    Graduated 16 October 2026 · 110/110
+                </p>
+                <p>
+                    Master's thesis on authentication policies,
+                    identity protection and security automation
+                    based on a PRADA Group case study.
+                </p>
+            </div>
 
-                <!-- <div class="w3-half">
-                    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
-                        <li class="w3-padding-16">Develop App or Website</li>
-                        <li class="w3-padding-16">Penetration Test</li>
-                        <li class="w3-padding-16">Endless Support</li>
-                        <li class="w3-padding-16">
-                            <h2>€ 25</h2>
-                            <span class="w3-opacity">per month</span>
-                        </li>
-                        <li class="w3-light-grey w3-padding-24">
-                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-                        </li>
-                    </ul>
-                </div> -->
-                <!-- End Grid/Pricing tables -->
-            <!-- </div> -->
+            <div class="career-item">
+                <h3>Bachelor's Degree in Computer Engineering</h3>
+                <p class="dates">
+                    Università Politecnica delle Marche ·
+                    Graduated 22 February 2024
+                </p>
+            </div>
 
-            <!-- Testimonials -->
+            <!-- Work experience -->
             <h2 class="w3-padding-24 w3-text-light-grey">My Work Experience</h2>
-            <img src="./assets/img/alternanzaScuolaLavoro.png" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                style="width:80px">
-            <p><span class="w3-large w3-margin-right">School-To-Work Alternation.</span>11/06/2018 - 30/08/2018, Ancona
-                (IT)</p>
-            <p>The position held was as an employee at Giocabene S.r.l. in Ancona, Italy.</p>
 
-            <br>
-            
-            <img src="./assets/img/Prada_iT_Designer.png" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                style="width:80px">
-            <p><span class="w3-large w3-margin-right">Stage Prada.</span>01/09/2025 - 28/02/2026, Milan
-                (IT)</p>
-            <p>The position held was as an IT Security Intern at Prada S.p.A., Milan, Italy.</p>
+            <div class="career-item">
+                <h3>
+                    Cybersecurity Consultant
+                    <span class="w3-text-grey">— Cluster Reply</span>
+                </h3>
+                <p class="dates">
+                    19 October 2026 – Present · Milan, Italy
+                </p>
+                <p>
+                    Working in IT consulting with a focus on Microsoft
+                    Security solutions and cloud technologies.
+                    Currently broadening my experience with AI agents
+                    and enterprise automation.
+                </p>
+            </div>
 
-            <!-- <br> -->
+            <div class="career-item">
+                <h3>
+                    IT Security Intern
+                    <span class="w3-text-grey">— PRADA Group</span>
+                </h3>
+                <p class="dates">
+                    1 September 2025 – 28 February 2026 · Milan, Italy
+                </p>
+                <p>
+                    Supported enterprise security monitoring and incident
+                    analysis, collaborating with an external SOC and working
+                    with Microsoft Sentinel, Microsoft Defender for Endpoint
+                    and Microsoft Defender for Cloud Apps.
+                    My master's thesis explored authentication security
+                    and automation in this context.
+                </p>
+            </div>
 
-            <!-- <img src="https://www.w3schools.com/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-            <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
-            <p>No one is better than John Doe.</p> -->
-            <!-- End About Section -->
-        </div>
+            <div class="career-item">
+                <h3>
+                    School-to-Work Alternation
+                    <span class="w3-text-grey">— Giocabene S.r.l.</span>
+                </h3>
+                <p class="dates">
+                    11 June 2018 – 30 August 2018 · Ancona, Italy
+                </p>
+                <p>
+                    Assisted customers with product selection,
+                    assembled display items and supported
+                    checkout operations during busy periods.
+                </p>
+            </div>
 
-        <!-- Portfolio Section -->
-        <div class="w3-padding-64 w3-content" id="projects">
-            <h2 class="w3-text-light-grey">My Projects</h2>
+        </section>
+
+        <!-- Projects -->
+        <section class="w3-padding-64 w3-content" id="projects" aria-labelledby="projects-title">
+
+            <h2 class="w3-text-light-grey" id="projects-title">My Projects</h2>
             <hr style="width:200px" class="w3-opacity">
 
-            <!-- Grid for photos -->
-            <div class="w3-row-padding" style="margin:0 -16px">
+            <p class="muted">
+                Selected academic and technical work.
+                I've replaced the old decorative image gallery
+                with short descriptions and links to actual
+                repositories where available.
+            </p>
+
+            <div class="w3-row-padding" style="margin:24px -16px 0">
+
+                <!-- Thesis project -->
                 <div class="w3-half">
-                    <p>At the following <a href="https://github.com/GabrielPiercecchi?tab=repositories">address</a> there
-                        is a collection of projects done for exams at the Universitá Politecninca delle Marche (italy).
-                    </p>
-                    <br>
-                    <img src="./assets/img/coupon.png" style="width:100%">
-                    <img src="./assets/img/softEBlock.png" style="width:100%">
-                    <img src="./assets/img/manutenzione.png" style="width:100%">
+                    <article class="project-card">
+                        <span class="eyebrow">
+                            Master's thesis · Enterprise cybersecurity
+                        </span>
+
+                        <h3>Authentication Security &amp; Automation</h3>
+
+                        <p>
+                            Explored authentication policies,
+                            identity protection and an automated
+                            security-monitoring workflow through
+                            a PRADA Group case study.
+                        </p>
+
+                        <p class="tech">
+                            Microsoft Entra ID · Microsoft Sentinel ·
+                            KQL · Azure Logic Apps
+                        </p>
+
+                        <p class="muted">
+                            Professional case study — source code not publicly shared.
+                        </p>
+                    </article>
                 </div>
 
+                <!-- Blockchain project -->
                 <div class="w3-half">
-                    <img src="./assets/img/meteo.png" style="width:100%">
-                    <img src="./assets/img/tutor.png" style="width:100%">
-                    <img src="./assets/img/basiDiDati.png" style="width:100%">
+                    <article class="project-card">
+                        <span class="eyebrow">
+                            University project · Blockchain
+                        </span>
+
+                        <h3>Supply Chain Traceability &amp; Sustainability</h3>
+
+                        <p>
+                            Blockchain-based application to follow
+                            products across a supply chain and record
+                            CO₂ emissions, with smart contracts
+                            and data reporting.
+                        </p>
+
+                        <p class="tech">
+                            Python · Flask · Hyperledger Besu ·
+                            Solidity · PostgreSQL · Docker
+                        </p>
+
+                        <a
+                            href="https://github.com/GabrielPiercecchi/SoftwareSecurity-BlockchainProject"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View repository
+                            <i class="fa fa-external-link" aria-hidden="true"></i>
+                        </a>
+                    </article>
                 </div>
-                <!-- End photo grid -->
+
+                <!-- Advanced programming -->
+                <div class="w3-half">
+                    <article class="project-card">
+                        <span class="eyebrow">
+                            University project · Backend development
+                        </span>
+
+                        <h3>Advanced Programming Project</h3>
+
+                        <p>
+                            Collaborative TypeScript backend project
+                            involving data models, controllers,
+                            database migrations, middleware
+                            and API development.
+                        </p>
+
+                        <p class="tech">
+                            TypeScript · Node.js · Docker · Databases
+                        </p>
+
+                        <a
+                            href="https://github.com/GabrielPiercecchi/ProgettoProgrammazioneAvanzata"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View repository
+                            <i class="fa fa-external-link" aria-hidden="true"></i>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Additional projects -->
+                <div class="w3-half">
+                    <article class="project-card">
+                        <span class="eyebrow">
+                            Portfolio · Academic software
+                        </span>
+
+                        <h3>Additional Software &amp; Security Projects</h3>
+
+                        <p>
+                            A collection of university projects
+                            covering web technologies, programming,
+                            software security and other practical
+                            engineering topics.
+                        </p>
+
+                        <p class="tech">
+                            Web Development · Programming · Cybersecurity
+                        </p>
+
+                        <a
+                            href="https://github.com/GabrielPiercecchi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Explore GitHub profile
+                            <i class="fa fa-external-link" aria-hidden="true"></i>
+                        </a>
+                    </article>
+                </div>
+
             </div>
-            <!-- End Portfolio Section -->
-        </div>
+        </section>
 
-        <!-- Contact Section -->
-        <div class="w3-padding-64 w3-content" id="contact">
-            <h2 class="w3-text-light-grey">Contact Me</h2>
+        <!-- Contact -->
+        <section class="w3-padding-64 w3-content" id="contact" aria-labelledby="contact-title">
+
+            <h2 class="w3-text-light-grey" id="contact-title">Contact Me</h2>
             <hr style="width:200px" class="w3-opacity">
 
             <div class="w3-section">
-                <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Porto Recanati, IT
-                </p>
-                <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +39 3518703833</p>
-                <p><a class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"
-                        href="mailto:gabriel.piercecchi@gmail.com" style="text-decoration: none;"></a> <a
-                        href="mailto:gabriel.piercecchi@gmail.com" style="text-decoration: none;">Email:
-                        gabriel.piercecchi@gmail.com</a></p>
-                <p><a class="fa fa-telegram fa-fw w3-text-white w3-xxlarge w3-margin-right"
-                    href="https://t.me/GabboP" style="text-decoration: none;"></a> <a
-                    href="https://t.me/GabboP" style="text-decoration: none;">Telegram:
-                    GabboP</a></p>
-                <p><a class="fa fa-twitter fa-fw w3-text-white w3-xxlarge w3-margin-right"
-                    href="https://twitter.com/GPiercecchi" style="text-decoration: none;"></a> <a
-                    href="https://twitter.com/GPiercecchi" style="text-decoration: none;">X:
-                    GPiercecchi</a></p>
-                <p><a class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"
-                    href="https://github.com/GabrielPiercecchi" style="text-decoration: none;"></a> <a
-                    href="https://github.com/GabrielPiercecchi" style="text-decoration: none;">GitHub:
-                    GabrielPiercecchi</a></p>
 
-        <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+                <p class="contact-row">
+                    <i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right" aria-hidden="true"></i>
+                    Italy · Working in Milan
+                </p>
+
+                <p class="contact-row">
+                    <i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right" aria-hidden="true"></i>
+                    <a href="mailto:gabriel.piercecchi@gmail.com">
+                        gabriel.piercecchi@gmail.com
+                    </a>
+                </p>
+
+                <p class="contact-row">
+                    <i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right" aria-hidden="true"></i>
+                    <a
+                        href="https://github.com/GabrielPiercecchi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        github.com/GabrielPiercecchi
+                    </a>
+                </p>
+
+                <p class="contact-row">
+                    <i class="fa fa-telegram fa-fw w3-text-white w3-xxlarge w3-margin-right" aria-hidden="true"></i>
+                    <a
+                        href="https://t.me/GabboP"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Telegram: GabboP
+                    </a>
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
         <footer class="w3-content w3-padding-64 w3-xlarge w3-center">
-            <p id="copyright">Copyright &copy; Gabriel Piercecchi, 2022</p>
-            <!-- End footer -->
+            <p class="w3-medium muted">
+                Copyright &copy; Gabriel Piercecchi,
+                <span id="year">2026</span>
+            </p>
         </footer>
 
-        <!-- END PAGE CONTENT -->
-    </div>
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
-
 </html>
